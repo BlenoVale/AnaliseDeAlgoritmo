@@ -41,21 +41,6 @@ public class Principal {
         System.out.print("\n\n");
     }
 
-    public void gerarNumerosAleatorios(int vetor[]) {
-        for (int i = 0; i < vetor.length; i++)
-            vetor[i] = (int) (Math.random() * 10000);
-    }
-
-    public void gerarNumerosCrescente(int vetor[]) {
-        for (int i = 0; i < vetor.length; i++)
-            vetor[i] = i;
-    }
-
-    public void gerarNumerosDecrescente(int vetor[]) {
-        for (int i = 0; i < vetor.length; i++)
-            vetor[i] = vetor.length - i;
-    }
-
     public static void main(String[] args) {
         new Principal();
     }

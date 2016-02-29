@@ -1,7 +1,5 @@
 package ordenacao;
 
-import ordenacao.HeapSort;
-
 /**
  * Classe facade
  *
@@ -19,7 +17,8 @@ public class Ordenacao {
         heap.heapSort(vetor);
     }
 
-    public void countingSort() {
+    public void countingSort(int vetor[], int maiorValor) {
+        CountingSort.countingSort(vetor, maiorValor);
     }
 
     public void radixSort() {
