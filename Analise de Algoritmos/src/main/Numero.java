@@ -7,18 +7,24 @@ package main;
 public class Numero {
 
     /**
-     * Maior valor = 1000
+     * Numeros do intervalo [ 1 a 100 ]
      *
      * @param vetor
      */
     public static void gerarNumerosAleatorios(int vetor[]) {
         for (int i = 0; i < vetor.length; i++)
-            vetor[i] = (int) (Math.random() * 1000);
+            vetor[i] = (int) (Math.random() * 100) + 1;
     }
 
+    /**
+     * Numeros do intervalor [ 1 a maiorValor ]
+     *
+     * @param vetor
+     * @param maiorValor
+     */
     public static void gerarNumerosAleatorios(int vetor[], int maiorValor) {
         for (int i = 0; i < vetor.length; i++)
-            vetor[i] = (int) (Math.random() * maiorValor);
+            vetor[i] = (int) (Math.random() * maiorValor) + 1;
     }
 
     public static void gerarNumerosCrescente(int vetor[]) {
@@ -27,7 +33,7 @@ public class Numero {
     }
 
     public static void gerarNumerosDecrescente(int vetor[]) {
-        for (int i = 0; i < vetor.length; i++)
+        for (int i = vetor.length - 1; i >= 0; i--)
             vetor[i] = vetor.length - i;
     }
 
@@ -39,5 +45,12 @@ public class Numero {
                 maior = vetor[i];
 
         return maior;
+    }
+
+    public static void printArray(int vetor[]) {
+        System.out.print("Vetor de Saída: ");
+        for (int i : vetor)
+            System.out.print(i + " ");
+        System.out.print("\n");
     }
 }

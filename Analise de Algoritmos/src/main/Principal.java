@@ -1,7 +1,6 @@
 package main;
 
 import ordenacao.QuickSort;
-import ordenacao.Ordenacao;
 
 /**
  * Classe destinada a respostas da lista de atividades do trabalho
@@ -10,24 +9,18 @@ import ordenacao.Ordenacao;
  */
 public class Principal {
 
-    private final Ordenacao ord = new Ordenacao();
-
     public Principal() {
 
-        questao1();
+        new Questao2();
 
-//        questao2();
+//        questao1();
 //        questao3();
-        // Teste
     }
 
     private void questao1() {
         int[] input = {24, 2, 45, 20, 56, 75, 2, 56, 99, 53, 12};
         new QuickSort().sort(input);
         printArray(input);
-    }
-
-    private void questao2() {
     }
 
     private void questao3() {
