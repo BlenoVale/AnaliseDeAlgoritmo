@@ -1,5 +1,6 @@
 package main;
 
+import ordenacao.BucketSort;
 import ordenacao.QuickSort;
 
 /**
@@ -11,10 +12,9 @@ public class Principal {
 
     public Principal() {
 
-        new Questao2();
-
+//        new Questao2();
 //        questao1();
-//        questao3();
+        questao3();
     }
 
     private void questao1() {
@@ -24,6 +24,8 @@ public class Principal {
     }
 
     private void questao3() {
+        int[] input = {5,3,0,2,4,1,0,5,2,3,1,4}; 
+        printArray(new BucketSort().sort(input));
     }
 
     private void printArray(int input[]) {
