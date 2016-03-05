@@ -12,9 +12,9 @@ public class Principal {
 
     public Principal() {
 
-//        new Questao2();
+        new Questao2();
 //        questao1();
-        questao3();
+        //questao3();
     }
 
     private void questao1() {
