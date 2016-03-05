@@ -10,12 +10,13 @@ import ordenacao.QuickSort;
 public class ClasseTesteBleno {
 
     public static void main(String[] args) {
-        
-        int[] input = new int[2000];
+
+        int[] input = new int[6000000];
 
         Numero.gerarNumerosDecrescente(input);
+
         new QuickSort().sort(input);
-  
+
     }
 
 }

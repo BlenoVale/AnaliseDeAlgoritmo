@@ -8,8 +8,6 @@ import java.util.Random;
  */
 public class QuickSort {
 
-    private int array[];
-    private int length;
     Random rand = new Random();
 
     /**
@@ -17,98 +15,48 @@ public class QuickSort {
      * @param inputArray array de entrada
      */
     public void sort(int inputArray[]) {
-        this.array = inputArray;
-        this.length = inputArray.length;
 
-        long start = System.currentTimeMillis();
-        quickSort(0, length - 1);
-        long end = System.currentTimeMillis();
-        System.out.println(end - start);
-        System.out.println("\n");
+        long inicio = System.currentTimeMillis();
+        quickSort(inputArray, 0, inputArray.length - 1);
+        long fim = System.currentTimeMillis();
+        System.out.println("tempo>> " + (fim - inicio));
+
     }
 
-    private void quickSort(int lowerIndex, int higherIndex) {
-        if (array == null || array.length == 0) {
-            return;
+    private void quickSort(int array[], int firt, int last) {
+        int index = partition(array, firt, last);
+        if (firt < index - 1) {  
+            quickSort(array, firt, index - 1);
         }
-        if (lowerIndex >= higherIndex) {
-            return;
+        if (index < last) {
+            quickSort(array, index, last);
         }
-        
-        int i = lowerIndex;
-        int j = higherIndex;
+    }
 
-        int pivot = array[rand.nextInt(higherIndex)];
+    private int partition(int array[], int first, int last) {
+        int i = first;
+        int j = last;
+        int aux;
+
+//        int pivot = array[(firt + last) / 2];
+        int indice = rand.nextInt(last - first) + first;
+        int pivot = array[indice];
 
         while (i <= j) {
-
             while (array[i] < pivot) {
                 i++;
             }
             while (array[j] > pivot) {
                 j--;
             }
-
             if (i <= j) {
-                exchangeNumbers(i, j);
+                aux = array[i];
+                array[i] = array[j];
+                array[j] = aux;
                 i++;
                 j--;
             }
         }
-
-        if (lowerIndex < j) {
-            quickSort(lowerIndex, j);
-        }
-        if (i < higherIndex) {
-            quickSort(i, higherIndex);
-        }
+        return i;
     }
-
-    private void exchangeNumbers(int i, int j) {
-        int aux = array[i];
-        array[i] = array[j];
-        array[j] = aux;
-    }
-
-//     private void quickSort(int lowerIndex, int higherIndex) {
-//        int i = lowerIndex;
-//        int j = higherIndex;
-//
-//        //Escolhe o elemento pivor, nesse caso é o elemento do meio do Vetor.
-//        int pivot = array[lowerIndex + (higherIndex - lowerIndex) / 2];
-//        //Escolhe o elemento pivor, nesse caso é o elemento aleatório.
-//        int pivot = array[new Random().nextInt(higherIndex)];
-//
-//        //Divide em dois vetores
-//        while (i <= j) {
-//
-//            /*
-//             Em cada interação identifica se o número da esquerda é maior que o pivor, e 
-//             também identifica se o número da direita é menor que o pivor. Caso as condiçoes
-//             sejam verdadeiras os números são trocados.
-//             */
-//            while (array[i] < pivot) {
-//                i++;
-//            }
-//            while (array[j] > pivot) {
-//                j--;
-//            }
-//
-//            if (i <= j) {
-//                // troca  a pocição dos elementos.
-//                exchangeNumbers(i, j);
-//                //move o indice para a próxima posição.
-//                i++;
-//                j--;
-//            }
-//        }
-//
-//        // chama o recursivamente o método quicksort agora para cada metade do vetor
-//        if (lowerIndex < j) {
-//            quickSort(lowerIndex, j);
-//        }
-//        if (i < higherIndex) {
-//            quickSort(i, higherIndex);
-//        }
-//    }
 }
