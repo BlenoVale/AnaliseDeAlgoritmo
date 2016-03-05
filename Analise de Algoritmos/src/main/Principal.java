@@ -9,8 +9,9 @@ public class Principal {
 
     public Principal() {
 
-//        new Questao2();
-//        new Questao1();
+        new Questao2();
+//        questao1();
+        //questao3();
     }
 
     public static void main(String[] args) {

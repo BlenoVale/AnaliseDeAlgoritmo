@@ -10,7 +10,7 @@ import ordenacao.HeapSort;
 public class ClasseTesteDan {
 
     public static void main(String[] args) {
-        int vetor[] = new int[10];
+        int vetor[] = new int[100];
         Numero.gerarNumerosAleatorios(vetor);
 
         Numero.printArray(vetor);
